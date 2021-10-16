@@ -1,5 +1,5 @@
 # Absaugung-Lasercutter
-Projekttagebuch und Dokumentation zum Bau der Absauge für unsere 2 Laser Cutter
+Projekttagebuch und Dokumentation zum Bau der Absauge für die 2 Laser Cutter des Makerspace Wiesbaden
 ### 15.10.2021 - DH
 Aus aktuellem Anlass (Beschwerde über Lärm nach 22:00 Uhr) hat der Vorstand Technik angeregt, den Neubau der Absauganlage für die 2 Laser Cutter zu forcieren. Da diese Thematik wirklich nicht zu meinen Kernkompetenzen gehört, habe ich versucht, Mitstreiter zu gewinnen, von denen ich glaube das Projekt mit dem nötigen Fach- und Sachverstand stemmen zu können.<br>
 Eingeladen habe ich Marc F., Amon L. und Brani (der sich in der Vergangenheit schon Gedanken zu diesem Thema gemacht hatte).
