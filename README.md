@@ -13,6 +13,6 @@ Es wurde lange diskutiert und wir waren uns am Schluss einig, dass die Anlage gr
 Ziel dabei ist es, die Kosten im Auge zu behalten, unsere Mitglieder zu schützen und den Geräuschpegel im Aussenbereich zu reduzieren.
 Während die meisten Aktivitäten das Team ausgeführt, rechnen wir - wenn notwendig - auch auf die Hilfe anderer Mitglieder.
 
-Marc wird die Meeting Minutes liefern und das Hauptkonzept erarbeiten. Amon, Brani und ich stehen für Material Recherchen zur Verfügung.
-
+Marc wird die [Meeting Minutes](/doc/Meeting Minutes 20211013) liefern und das Hauptkonzept erarbeiten. Amon, Brani und ich stehen für Material Recherchen zur Verfügung.
+[ggf. vorher das 'public' Fräser Set aus dem Toolslocker holen](#ToolsLocker)
 Auch wurde beschlossen, dass wir uns regelmässig vor Ort treffen, um weitere Schritte abzustimmen.
