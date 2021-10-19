@@ -1,0 +1,32 @@
+themensetzung: Projektvorstellungen, Umfang, Teamzusammenstellung, Kostenrahmen, erste Ideen für eine Umsetzung, Aufgabenverteilung.
+
+Projektvorstellunen:  Die aktuell verwendete Absaugung ist scheinbar zu laut (Messung der tatsächlichen Lautstärke steht noch aus)
+                      und sollte neu aufgesetzt werden bei einer deutlichen Reduzierung der Lautstärke und bei gleichbleibender 
+                      oder besserer Leistung.
+
+Umfang:               An die Absaugung sollen zwei Lasercutter (LC) mit einem Bauraumvolumen von XXX m³ und XXX m³ angeschlossen werden.
+                      der LC mit XXX m³ wird bereits mit einem Radiallüfter von 420 m³/h betrieben, was scheinbar ausreichend ist und
+                      als Minimalanforderung definiert wird.
+                      Die Absaugung soll mit einer Filtereinheit ausgerüstet werden (3-stufig) und einem Schalldämpfer.
+                      Als Benchmark wird eine Schalldruckpegelmessung und eine Frequenzanalyse erfolgen.
+                      
+Projektkernteam:      Dieter, Amon, Brani, Marc
+
+Ergebniss "BS":       Radiallüfter mit mindestens 1500 m³/h und einem möglichst hohem dp.
+                      Schalldämpfer und Filtereinheit wird in Eigenleistung gebaut.
+                      Die Regelung erfolgt mittels  A: Drehzahl des Lüfters
+                                                    B: 3 Klappen
+                                                    C: Durchflussmessung mittels Venturi-Düse
+                                                    D: Regelung zentral oder dezentral (mit weiterleitung des Zustandes?)
+                      Der Zustand der einzelnen Filter wird mittels dp-Messung erfolgen und dem User gemeldet/signalisiert.
+
+Aufgabenverteilung:   Erstellung Git-Projekt                        Dieter        done
+                      Meeting Minutes                               Marc          done
+                      CAD                                           Marc          Angefangen, werde die Tag anfangen die ersten Teile hochzuladen
+                      RedBull-material besorgen                     Brani         200er und eine Nummer kleiner kann direkt organisiert werden
+                      Schnittestelle zum MS?                        Dieter
+                      Festlegung Lüfter                             MS-Vorstand
+                      
+nächstes Meeting: 26.10 20:00?
+                      
+                      
