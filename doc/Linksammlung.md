@@ -1,5 +1,6 @@
 # Linksammlung
 ## Radiallüfter
+- https://www.ebay.de/str/bnghomecom
 - https://www.iventilatoren.de/industrie-radialventilator-o-250-mm-2000-m-h-x11170
 
 ## Frequenzumrichter
