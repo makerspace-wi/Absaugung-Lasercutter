@@ -17,3 +17,4 @@ Marc wird die [Meeting Minutes](https://github.com/makerspace-wi/Absaugung-Laser
 
 Auch wurde beschlossen, dass wir uns regelmässig vor Ort treffen, um weitere Schritte abzustimmen.
 
+Nächstes Meeting ist für Dienstag den 26.10.2021 - 20:00 Uhr geplant
