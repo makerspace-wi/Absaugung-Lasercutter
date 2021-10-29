@@ -17,4 +17,25 @@ Marc wird die [Meeting Minutes](https://github.com/makerspace-wi/Absaugung-Laser
 
 Auch wurde beschlossen, dass wir uns regelmässig vor Ort treffen, um weitere Schritte abzustimmen.
 
-Nächstes Meeting ist für Dienstag den 26.10.2021 - 20:00 Uhr geplant
+Follow Up Meeting fand am Dienstag den 26.10.2021 - 20:00 Uhr statt
+### 28.10.2021
+Die Anschlüsse an die Laser Cutter werden mit 160er Rohren realisiert, die geregelte
+Klappen erhalten werden, um die Saugleistung der Nutzung entsprechend anzupassen.
+Von dort wird es in einen Filterkasten (500x500x1000) der Vorfilter, Haupfilter und Aktivkohlefilter (Schüttgut) enthält, geführt. Die einzelnen Filtereinschübe sollen einfach austauschbar sein.
+Der Aus- und Eingang des Filters wird an einen Differenzdrucksensor angeschlossen, der  später dann notwendige Filterwechsel erkennen und alarmieren soll.
+Der Ausgang des Filterkastens wird an der Ansaugseite des Radiallüfters (im Innenraum)
+angeschlossen (runder Anschluss) und der Ausgang des Lüfters geht dann direkt in einen
+Schalldämpferkanal, der sich bis zum Fenster ziehen und an diesem befestigt wird.
+Im Aussenbereich ist dann noch ein Schalldiffusor vorgesehen.
+Der Radiallüfter wird ein- oder 3-phasig sein und durch einen Frequenzumsetzer (FU)
+angesteuert werden. Der FU wiederum wird über eine Schnittstelle von einem vernetztem Rechner angesteuert.
+Buget:
+Eine grobe Überschlagsrechnung hat ca. € 700,00 ergeben für Holz, Dämm- und Filtermaterial, Radiallüfter, Frequenzumsetzer, Sensoren, Schrittmotoren, Montagematerial, Rechner, Netzteile usw.
+Ziel dabei ist es, vorhandene Materialien aus Spenden zu verwenden und die Kosten niedrig
+wie möglich zu halten.
+Das Team möchte gerne bald mit dem Bau der Komponenten beginnen und wartet in guter
+Hoffnung auf die finanzielle Freigabe.
+
+### 29.10.2021 - DH
+- Projektfreigabe wurde erteilt - Ziel ist die Materialkosten < € 700 zu halten
+- Schallpegelmessungen sind geplant für Freitag, den 29.10.2021 (Roland & Amon)
