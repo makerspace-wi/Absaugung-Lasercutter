@@ -18,7 +18,7 @@ Marc wird die [Meeting Minutes](https://github.com/makerspace-wi/Absaugung-Laser
 Auch wurde beschlossen, dass wir uns regelmässig vor Ort treffen, um weitere Schritte abzustimmen.
 
 Follow Up Meeting fand am Dienstag den 26.10.2021 - 20:00 Uhr statt
-### 28.10.2021
+### 28.10.2021 - DH
 Zusammenfassung des Meetings:<br>
 Die Anschlüsse an die Laser Cutter werden mit 160er Rohren realisiert, die geregelte
 Klappen erhalten werden, um die Saugleistung der Nutzung entsprechend anzupassen.
