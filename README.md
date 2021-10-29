@@ -19,20 +19,21 @@ Auch wurde beschlossen, dass wir uns regelmässig vor Ort treffen, um weitere Sc
 
 Follow Up Meeting fand am Dienstag den 26.10.2021 - 20:00 Uhr statt
 ### 28.10.2021
+Zusammenfassung des Meetings:<br>
 Die Anschlüsse an die Laser Cutter werden mit 160er Rohren realisiert, die geregelte
 Klappen erhalten werden, um die Saugleistung der Nutzung entsprechend anzupassen.
-Von dort wird es in einen Filterkasten (500x500x1000) der Vorfilter, Haupfilter und Aktivkohlefilter (Schüttgut) enthält, geführt. Die einzelnen Filtereinschübe sollen einfach austauschbar sein.
+Von dort wird es in einen Filterkasten (500x500x1000) der Vorfilter, Haupfilter und Aktivkohlefilter (Schüttgut) enthält, geführt. Die einzelnen Filtereinschübe sollen einfach austauschbar sein.<br>
 Der Aus- und Eingang des Filters wird an einen Differenzdrucksensor angeschlossen, der  später dann notwendige Filterwechsel erkennen und alarmieren soll.
 Der Ausgang des Filterkastens wird an der Ansaugseite des Radiallüfters (im Innenraum)
 angeschlossen (runder Anschluss) und der Ausgang des Lüfters geht dann direkt in einen
-Schalldämpferkanal, der sich bis zum Fenster ziehen und an diesem befestigt wird.
+Schalldämpferkanal, der sich bis zum Fenster ziehen und an diesem befestigt wird.<br>
 Im Aussenbereich ist dann noch ein Schalldiffusor vorgesehen.
 Der Radiallüfter wird ein- oder 3-phasig sein und durch einen Frequenzumsetzer (FU)
-angesteuert werden. Der FU wiederum wird über eine Schnittstelle von einem vernetztem Rechner angesteuert.
-Buget:
-Eine grobe Überschlagsrechnung hat ca. € 700,00 ergeben für Holz, Dämm- und Filtermaterial, Radiallüfter, Frequenzumsetzer, Sensoren, Schrittmotoren, Montagematerial, Rechner, Netzteile usw.
+angesteuert werden. Der FU wiederum wird über eine Schnittstelle von einem vernetztem Rechner angesteuert.<br><br>
+Buget:<br>
+Eine grobe Überschlagsrechnung hat ca. € 700,00 ergeben für Holz, Dämm- und Filtermaterial, Radiallüfter, Frequenzumsetzer, Sensoren, Schrittmotoren, Montagematerial, Rechner, Netzteile usw.<br>
 Ziel dabei ist es, vorhandene Materialien aus Spenden zu verwenden und die Kosten niedrig
-wie möglich zu halten.
+wie möglich zu halten.<br>
 Das Team möchte gerne bald mit dem Bau der Komponenten beginnen und wartet in guter
 Hoffnung auf die finanzielle Freigabe.
 
