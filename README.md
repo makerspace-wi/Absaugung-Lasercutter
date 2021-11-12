@@ -1,21 +1,14 @@
 # Absaugung-Lasercutter
 Projekttagebuch und Dokumentation zum Bau der Absauge für die 2 Laser Cutter des Makerspace Wiesbaden
-### 15.10.2021 - DH
-Aus aktuellem Anlass (Beschwerde über Lärm nach 22:00 Uhr) hat der Vorstand Technik angeregt, den Neubau der Absauganlage für die 2 Laser Cutter zu forcieren. Da diese Thematik wirklich nicht zu meinen Kernkompetenzen gehört, habe ich versucht, Mitstreiter zu gewinnen, von denen ich glaube das Projekt mit dem nötigen Fach- und Sachverstand stemmen zu können.<br>
-Eingeladen habe ich Marc F., Amon L. und Brani (der sich in der Vergangenheit schon Gedanken zu diesem Thema gemacht hatte).
-Alle 3 haben zugesagt und einem kurzfristiegen Kick-Off Meeting zugestimmt, dass am 15. September 2021 stattgefunden hat.<br>
-Es wurde lange diskutiert und wir waren uns am Schluss einig, dass die Anlage grob aus folgenden Komponenten bestehen wird:
-- einem geregelten Radiallüfter (Schneckenlüfter) mit ca. 1500m^3*h^-1 (geregelt mit einen Frequenzumsetzer)
-- 200mm Kunststoffrohre
-- einer Filtereinheit (Feinstaub und ggf. Aktivkohle)
-- Schalldämpfmassnahmen für die Luftführung, für den Radiallüfter und des Luftstromaustritts
 
-Ziel dabei ist es, die Kosten im Auge zu behalten, unsere Mitglieder zu schützen und den Geräuschpegel im Aussenbereich zu reduzieren.
-Während die meisten Aktivitäten das Team ausgeführt, rechnen wir - wenn notwendig - auch auf die Hilfe anderer Mitglieder.
+### 12.11.2021 - DH
+Marc baut derzeit eine Test Regelklappeneinheit auf.
+Nach seinen Unterlagen wurden heute die Regelklappe und 2 Lagerhalter gedruckt
 
-Marc wird die [Meeting Minutes](https://github.com/makerspace-wi/Absaugung-Lasercutter/blob/main/doc/Meeting%20Minutes%2020211013) liefern und das Hauptkonzept erarbeiten. Amon, Brani und ich stehen für Material Recherchen zur Verfügung.
 
-Auch wurde beschlossen, dass wir uns regelmässig vor Ort treffen, um weitere Schritte abzustimmen.
+### 29.10.2021 - DH
+- Projektfreigabe wurde erteilt - Ziel ist die Materialkosten < € 700 zu halten
+- Schallpegelmessungen sind geplant für Freitag, den 29.10.2021 (Roland & Amon)
 
 Follow Up Meeting fand am Dienstag den 26.10.2021 - 20:00 Uhr statt
 ### 28.10.2021 - DH
@@ -37,6 +30,20 @@ wie möglich zu halten.<br>
 Das Team möchte gerne bald mit dem Bau der Komponenten beginnen und wartet in guter
 Hoffnung auf die finanzielle Freigabe.
 
-### 29.10.2021 - DH
-- Projektfreigabe wurde erteilt - Ziel ist die Materialkosten < € 700 zu halten
-- Schallpegelmessungen sind geplant für Freitag, den 29.10.2021 (Roland & Amon)
+
+### 15.10.2021 - DH
+Aus aktuellem Anlass (Beschwerde über Lärm nach 22:00 Uhr) hat der Vorstand Technik angeregt, den Neubau der Absauganlage für die 2 Laser Cutter zu forcieren. Da diese Thematik wirklich nicht zu meinen Kernkompetenzen gehört, habe ich versucht, Mitstreiter zu gewinnen, von denen ich glaube das Projekt mit dem nötigen Fach- und Sachverstand stemmen zu können.<br>
+Eingeladen habe ich Marc F., Amon L. und Brani (der sich in der Vergangenheit schon Gedanken zu diesem Thema gemacht hatte).
+Alle 3 haben zugesagt und einem kurzfristiegen Kick-Off Meeting zugestimmt, dass am 15. September 2021 stattgefunden hat.<br>
+Es wurde lange diskutiert und wir waren uns am Schluss einig, dass die Anlage grob aus folgenden Komponenten bestehen wird:
+- einem geregelten Radiallüfter (Schneckenlüfter) mit ca. 1500m^3*h^-1 (geregelt mit einen Frequenzumsetzer)
+- 200mm Kunststoffrohre
+- einer Filtereinheit (Feinstaub und ggf. Aktivkohle)
+- Schalldämpfmassnahmen für die Luftführung, für den Radiallüfter und des Luftstromaustritts
+
+Ziel dabei ist es, die Kosten im Auge zu behalten, unsere Mitglieder zu schützen und den Geräuschpegel im Aussenbereich zu reduzieren.
+Während die meisten Aktivitäten das Team ausgeführt, rechnen wir - wenn notwendig - auch auf die Hilfe anderer Mitglieder.
+
+Marc wird die [Meeting Minutes](https://github.com/makerspace-wi/Absaugung-Lasercutter/blob/main/doc/Meeting%20Minutes%2020211013) liefern und das Hauptkonzept erarbeiten. Amon, Brani und ich stehen für Material Recherchen zur Verfügung.
+
+Auch wurde beschlossen, dass wir uns regelmässig vor Ort treffen, um weitere Schritte abzustimmen.
