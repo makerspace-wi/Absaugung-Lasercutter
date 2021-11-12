@@ -1,6 +1,6 @@
 # Absaugung-Lasercutter
 Projekttagebuch und Dokumentation zum Bau der Absauge für die 2 Laser Cutter des Makerspace Wiesbaden
-<img src="https://user-images.githubusercontent.com/42463588/141512376-0b4040dd-f99b-469c-b676-1f1e41083c11.jpg" width="400"> <img src="https://user-images.githubusercontent.com/42463588/141512415-e4059dad-4c4f-486c-8200-08e39cc2980e.jpg)" width="400">
+<img src="https://user-images.githubusercontent.com/42463588/141512376-0b4040dd-f99b-469c-b676-1f1e41083c11.jpg" width="400"> <img src="https://user-images.githubusercontent.com/42463588/141512415-e4059dad-4c4f-486c-8200-08e39cc2980e.jpg" width="400">
 
 
 ### 12.11.2021 - DH
