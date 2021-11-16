@@ -1,7 +1,8 @@
 # Absaugung-Lasercutter
 Projekttagebuch und Dokumentation zum Bau der Absauge für die 2 Laser Cutter des Makerspace Wiesbaden
 
-
+### 16.11.2021 - DH
+Frequenzumrichter wurde bestellt
 
 ### 12.11.2021 - DH
 Marc baut derzeit eine Test-Regelklappeneinheit auf.
