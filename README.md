@@ -6,6 +6,8 @@ FU heute angekommen - hier schon mal das Anschlussbild
 
 <img src="https://user-images.githubusercontent.com/42463588/142736131-a84f6ed4-6690-4161-a7e6-33251ddabb04.jpg" width="400">
 
+PWM-Module zur Erzeugung der Kontrollspannung wurde auch bestellt.
+
 ### 16.11.2021 - DH
 Frequenzumrichter wurde bestellt
 
