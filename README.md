@@ -4,6 +4,8 @@ Projekttagebuch und Dokumentation zum Bau der Absauge für die 2 Laser Cutter de
 ### 20.11.2021 - DH
 FU heute angekommen - hier schon mal das Anschlussbild
 
+<img src="https://user-images.githubusercontent.com/42463588/142736131-a84f6ed4-6690-4161-a7e6-33251ddabb04.jpg" width="400">
+
 ### 16.11.2021 - DH
 Frequenzumrichter wurde bestellt
 
