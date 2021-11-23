@@ -1,5 +1,9 @@
 # Absaugung-Lasercutter
 Projekttagebuch und Dokumentation zum Bau der Absauge für die 2 Laser Cutter des Makerspace Wiesbaden
+### 23.11.2021 - DH
+PWM nach Spannungwandler eingetroffen. Wird für die computergesteuerte Drehzahlregelung des Radiallüfters benötigt.
+
+<img src="https://user-images.githubusercontent.com/42463588/142990668-fcfad9e9-920c-45d1-9ba1-c498ebb1df32.jpg" width="400">
 
 ### 20.11.2021 - DH
 FU heute angekommen - hier schon mal das Anschlussbild
