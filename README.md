@@ -4,6 +4,9 @@ Projekttagebuch und Dokumentation zum Bau einer Absauge für den blauen Laser Cu
 ## April 2024
 Nun kann man schon was erkennen - das Prokekt nimmt 'Formen an'.<br><br>
 ![IMG_4083](https://github.com/makerspace-wi/Absaugung-Lasercutter/assets/42463588/7caaabd1-d47c-443e-bb37-2cc0cce74798)
+<br><br>
+Im folgenden der Controller. Dieser soll über das MQTT-Protokoll die Druckdifferenz von 2 Filterstufen publizieren, damit unser System erkennen kann, wann Filter oder Aktivkohle gewechselt werden müssen. Der Controller kontrolliert ständig das STATUS-Signal des Laser Cutter Controllers und schaltet die Absauge ein, sobald ein Laser Job anläuft, bzw. wenn der Job beendet ist mit 60-Sekunden Nachlauf wieder ab. Der Controller gibt/regelt auch die Drehzahl des Radiallüfters im Bereich von 0 - 100%.<br><br>
+![IMG_4047](https://github.com/makerspace-wi/Absaugung-Lasercutter/assets/42463588/85fd7a4b-b50c-48e3-a376-77f0b59643b4)
 ## März 2024
 Was lange währt - wird endlich gut!
 
