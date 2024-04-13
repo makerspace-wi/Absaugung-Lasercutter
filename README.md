@@ -7,6 +7,10 @@ Nun kann man schon was erkennen - das Prokekt nimmt 'Formen an'.<br><br>
 <br><br>
 Im folgenden der Controller. Dieser soll über das MQTT-Protokoll die Druckdifferenz von 2 Filterstufen publizieren, damit unser System erkennen kann, wann Filter oder Aktivkohle gewechselt werden müssen. Der Controller kontrolliert ständig das STATUS-Signal des Laser Cutter Controllers und schaltet die Absauge ein, sobald ein Laser Job anläuft, bzw. wenn der Job beendet ist mit 60-Sekunden Nachlauf wieder ab. Der Controller gibt/regelt auch die Drehzahl des Radiallüfters im Bereich von 0 - 100%.<br><br>
 ![IMG_4047](https://github.com/makerspace-wi/Absaugung-Lasercutter/assets/42463588/85fd7a4b-b50c-48e3-a376-77f0b59643b4)
+<br><br>
+Unsere Lösung für den Aktivkohlefilter:
+<br><br>
+![20240227_000257](https://github.com/makerspace-wi/Absaugung-Lasercutter/assets/42463588/6fd59ab0-0fc3-42bd-ba91-f598edced4b1)
 ## März 2024
 Was lange währt - wird endlich gut!
 
