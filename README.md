@@ -1,6 +1,9 @@
 # Absaugung-Lasercutter
 Projekttagebuch und Dokumentation zum Bau einer Absauge für den blauen Laser Cutter des Makerspace Wiesbaden
 # Neuanfang im September 2023
+## April 2024
+Nun kann man schon was erkennen - das Prokekt nimmt 'Formen an'.<br><br>
+![IMG_4083](https://github.com/makerspace-wi/Absaugung-Lasercutter/assets/42463588/7caaabd1-d47c-443e-bb37-2cc0cce74798)
 ## März 2024
 Was lange währt - wird endlich gut!
 
