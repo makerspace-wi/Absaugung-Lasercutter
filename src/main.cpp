@@ -112,8 +112,8 @@ const char *PubTopicPWMMAX = "lcfilter/pwmmax";       // Topic max pwm value
 const char *PubTopicPWMACT = "lcfilter/pwmact";       // Topic actual pwm value
 const char *PubTopicNachlauf = "lcfilter/nachlauf";   // Topic actual nachlauf value
 const char *PubTopicIP = "lcfilter/ip";               // Topic actual ip
-const char *PubTopicPD = "lcfilter/PressureDifference";               // Topic actual ip
-
+const char *PubTopicPD = "lcfilter/PressureDifference";   // Topic actual ip
+const char *PubTopicLaser = "lcfilter/laser";             // Topic Status Message
 const char *SubTopicCmnd = "lcfilter/cmnd/data";
 
 // Tasks
@@ -217,6 +217,7 @@ void setup()
 
   client.publish(PubTopicStatus, temp_str_2.c_str());
   client.publish(PubTopicIP, WiFi.localIP().toString().c_str());
+  client.publish(PubTopicLaser, String(0).c_str());
 
   t6.restart();
   t7.restartDelayed(TASK_SECOND * 5); // start periodic tara check/adjustment
@@ -396,6 +397,7 @@ void check_laser() // check if laser is active - on true turn on PWM
     t5.restartDelayed(nachlauf * TASK_MINUTE);
     t6.restart(); // publish data
     t7.disable(); // hourly tara check
+    client.publish(PubTopicLaser, String(1).c_str());
   }
   // Nachlaufzeit mit halber Lüfterleistung
   if (digitalRead(laser_signal) && pwm_act > 0)
@@ -404,6 +406,7 @@ void check_laser() // check if laser is active - on true turn on PWM
     analogWrite(PWM_pin, pwm_act);
     t4.setInterval(TASK_SECOND * 5);
     t6.restart(); // publish data
+    client.publish(PubTopicLaser, String(0).c_str());
   }
 }
 
