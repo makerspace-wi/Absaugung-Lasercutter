@@ -13,7 +13,7 @@ Es wird 2 Druckdifferenzkanäle geben.
 
 MQTT-Topics:
 Subscribe to topic lcfilter/stat/value_1 - value_2 - heartbeat - pwmmax - pwmact - nachlauf - ip - statusmsg
-Publish to topic lcfilter/cmnd/data      tara - nachlaufN (N = Wert in Minuten) - pwmNNN (N = max PWM Value 0 - 100) -
+Publish to topic lcfilter/cmnd/data      tara - nachlaufN (N = Wert in Sekunden)
 
 Cotroller SW kann über OTA-Programming geladen werden ==> IP-Adresse/update
 */
@@ -31,7 +31,7 @@ Cotroller SW kann über OTA-Programming geladen werden ==> IP-Adresse/update
 #include <WiFiUdp.h>
 #include <EEPROM.h>
 #include <ArduinoJson.h>
-#include <Credentials_hm.h>
+#include <Credentials_ms.h>
 
 // pins:
 const int HX711_dout_1 = 4;  // mcu > HX711 dout pin - D2
@@ -39,7 +39,7 @@ const int HX711_sck_1 = 5;   // mcu > HX711 sck pin - D1
 const int HX711_dout_2 = 12; // mcu > HX711 dout pin - D6
 const int HX711_sck_2 = 14;  // mcu > HX711 sck pin - D5
 
-const int PWM_pin = 15;      // D8 255 -> 100%, 127 -> 50%
+const int blower = 16;      // D0 2
 const int laser_signal = 13; // D7
 
 void refreshOffsetValueAndSaveToEEprom();
@@ -83,7 +83,6 @@ const int calVal_eepromAdress_2 = 4;
 const int tareOffsetVal_eepromAdress_1 = 8;
 const int tareOffsetVal_eepromAdress_2 = 12;
 const int nachlaufVal_eepromAdress = 16;
-const int pwmmax_eepromAdress = 20;
 
 unsigned long t = 0;
 String temp_str_1;
@@ -93,9 +92,8 @@ static boolean newDataReady = 0;
 char msg[50];
 char buffer[256];
 
-int pwm_act = 0;
-int pwm_max = 100;
-int nachlauf = 2; // Nachlauf in Minuten
+int blower_active = 0;
+int nachlauf = 30; // Nachlauf in Sekunden
 float ch1;
 float ch2;
 
@@ -109,7 +107,7 @@ const char *PubTopicStatus = "lcfilter/statusmsg";    // Topic Status Message
 const char *PubTopicSensor_1 = "lcfilter/value_1";    // Topic Status Message
 const char *PubTopicSensor_2 = "lcfilter/value_2";    // Topic Status Message
 const char *PubTopicPWMMAX = "lcfilter/pwmmax";       // Topic max pwm value
-const char *PubTopicPWMACT = "lcfilter/pwmact";       // Topic actual pwm value
+const char *PubTopicPWMACT = "lcfilter/blower_active";       // Topic blower status
 const char *PubTopicNachlauf = "lcfilter/nachlauf";   // Topic actual nachlauf value
 const char *PubTopicIP = "lcfilter/ip";               // Topic actual ip
 const char *PubTopicPD = "lcfilter/PressureDifference";   // Topic actual ip
@@ -117,10 +115,10 @@ const char *PubTopicLaser = "lcfilter/laser";             // Topic Status Messag
 const char *SubTopicCmnd = "lcfilter/cmnd/data";
 
 // Tasks
-Task t1(5000, TASK_FOREVER, &mainloop, &ts, true);              // main task
-Task t2(200, TASK_FOREVER, &convert, &ts, true);                // convert task
-Task t3(TASK_SECOND * 10, TASK_FOREVER, &heartbeat, &ts, true); // hartbeat task
-Task t4(500, TASK_FOREVER, &check_laser, &ts, true);            // check STATUS of LC-Controller
+Task t1(TASK_SECOND * 5, TASK_FOREVER, &mainloop, &ts, true);     // main task
+Task t2(TASK_SECOND / 5, TASK_FOREVER, &convert, &ts, true);      // convert task
+Task t3(TASK_SECOND * 10, TASK_FOREVER, &heartbeat, &ts, true);   // hartbeat task
+Task t4(TASK_SECOND / 4, TASK_FOREVER, &check_laser, &ts, true);  // check STATUS of LC-Controller
 Task t5(0, TASK_ONCE, &disable_pwm, &ts, false);
 Task t6(0, TASK_ONCE, &publish_data, &ts, false);
 Task t7(TASK_HOUR, TASK_FOREVER, &check_tara, &ts, false);
@@ -129,12 +127,12 @@ void setup()
 {
   Serial.begin(115200);
   pinMode(laser_signal, INPUT_PULLUP);
-  pinMode(PWM_pin, OUTPUT);
+  pinMode(blower, OUTPUT);
+  digitalWrite(blower, HIGH);
   ts.startNow();
   setup_wifi();
   server.on("/", HTTP_GET, [](AsyncWebServerRequest *request)
-            { request->send(200, "text/plain", "Hi! Ich bin der Filter Controller"); });
-
+  { request->send(200, "text/plain", "Hi! Ich bin der Filter Controller"); });
 
   EEPROM.begin(512);
   ElegantOTA.begin(&server);
@@ -146,9 +144,7 @@ void setup()
   client.setCallback(callback);
   client.connect(clientId);
   client.subscribe(SubTopicCmnd);
-
-  analogWrite(PWM_pin, 0); // set PWM to 0%
-
+ 
   timeClient.update();
   while (timeClient.isTimeSet() != true)
   {
@@ -174,13 +170,7 @@ void setup()
     EEPROM.get(nachlaufVal_eepromAdress, nachlauf);
   }
 
-  EEPROM.get(pwmmax_eepromAdress, temp);
-  if (temp != -1)
-  {
-    EEPROM.get(pwmmax_eepromAdress, pwm_max);
-  }
 
-  client.publish(PubTopicPWMMAX, String(pwm_max).c_str());
   client.publish(PubTopicNachlauf, String(nachlauf).c_str());
   // restore the zero offset value from eeprom:
   long tare_offset = 0;
@@ -262,7 +252,6 @@ void mainloop()
 
    // t6.restart(); // publish values
   }
-
 }
 
 // zero offset value (tare), calculate and save to EEprom:
@@ -296,7 +285,7 @@ void refreshOffsetValueAndSaveToEEprom()
 
 void check_tara()
 {
-  if ((pwm_act == 0 && abs(ch1) >= 0.05) || (pwm_act == 0 && abs(ch2) >= 0.05))
+  if ((blower_active == 0 && abs(ch1) >= 0.05) || (blower_active == 0 && abs(ch2) >= 0.05))
   {
     refreshOffsetValueAndSaveToEEprom();
   }
@@ -370,14 +359,7 @@ void callback(char *topic, byte *payload, unsigned int length)
   {
     refreshOffsetValueAndSaveToEEprom();
   }
-  if (plo.startsWith("PWM"))
-  {
-    pwm_max = plo.substring(3).toInt();
-    client.publish(PubTopicPWMMAX, plo.substring(3).c_str());
-
-    EEPROM.put(pwmmax_eepromAdress, pwm_max); // save the new nachlauf value to EEprom
-    EEPROM.commit();
-  }
+ 
   if (plo.startsWith("NACHLAUF"))
   {
     nachlauf = plo.substring(8).toInt();
@@ -391,19 +373,20 @@ void check_laser() // check if laser is active - on true turn on PWM
 {
   if (!digitalRead(laser_signal))
   {
-    pwm_act = pwm_max * 255 / 100;
-    analogWrite(PWM_pin, pwm_act);
+    blower_active = 1;
+    //analogWrite(blower, blower_active);
+    digitalWrite(blower, LOW);
     t4.setInterval(TASK_SECOND * 5);
-    t5.restartDelayed(nachlauf * TASK_MINUTE);
+    t5.restartDelayed(nachlauf * TASK_SECOND);
     t6.restart(); // publish data
     t7.disable(); // hourly tara check
     client.publish(PubTopicLaser, String(1).c_str());
   }
   // Nachlaufzeit mit halber Lüfterleistung
-  if (digitalRead(laser_signal) && pwm_act > 0)
+  if (digitalRead(laser_signal) && blower_active > 0)
   {
-    pwm_act = pwm_max * 255 / 200;
-    analogWrite(PWM_pin, pwm_act);
+    blower_active = 1;
+    //analogWrite(blower, blower_active);
     t4.setInterval(TASK_SECOND * 5);
     t6.restart(); // publish data
     client.publish(PubTopicLaser, String(0).c_str());
@@ -412,8 +395,8 @@ void check_laser() // check if laser is active - on true turn on PWM
 
 void disable_pwm() // disable PWM
 {
-  pwm_act = 0;
-  analogWrite(PWM_pin, pwm_act);
+  blower_active = 0;
+  digitalWrite(blower, HIGH);
   t6.restart();
   t7.restartDelayed(TASK_MINUTE);
   t4.setInterval(500);
@@ -421,7 +404,6 @@ void disable_pwm() // disable PWM
 
 void publish_data()
 {
-  client.publish(PubTopicPWMMAX, String(pwm_max).c_str());
-  client.publish(PubTopicPWMACT, String(pwm_act).c_str());
+  client.publish(PubTopicPWMACT, String(blower_active).c_str());
   //client.publish(PubTopicNachlauf, String(nachlauf).c_str());
 }
